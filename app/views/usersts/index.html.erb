@@ -1,0 +1,41 @@
+<h1>Listing usersts</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Disposition</th>
+    <th>Customer</th>
+    <th>Tracker</th>
+    <th>Status</th>
+    <th>Priority</th>
+    <th>Order</th>
+    <th>Estimated hours</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @usersts.each do |userst| %>
+ 
+  <tr>
+    <td><%= link_to userst.name, :controller => :tasks, :action=> :new, :id => userst.id %></td>
+    <td><%= userst.disposition %></td>
+    <td><%= userst.customer %></td>
+    <td><%= userst.tracker %></td>
+    <td><%= userst.status %></td>
+    <td><%= userst.priority %></td>
+    <td><%= userst.order %></td>
+    <td><%= userst.estimated_hours %></td>
+    <td><%= userst.description %></td>
+    <td><%= link_to 'Show', userst %></td>
+    <td><%= link_to 'Edit', edit_userst_path(userst) %></td>
+    <td><%= link_to 'Destroy', userst, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%#= link_to 'New Userst', new_userst_path %>
+<%= link_to 'back to project', projects_path %>

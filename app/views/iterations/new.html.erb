@@ -1,0 +1,24 @@
+<%= javascript_include_tag('rails','jquery.min','jquery-ui.min')%>
+<%= stylesheet_link_tag('jquery-ui')%>
+
+Project Name: <%= @project.name%>
+
+<%= render 'form' %>
+<hr><table>
+	<tr><th>Name of Iteration</th><th>Description</th><th>Start Date</th><th>End Date</th></tr>
+<%if !@project.iterations.blank?%>
+	<% for item in @project.iterations %>
+		<tr>
+			<td><%= link_to item.name,  :controller => :usersts, :action=> :new, :id => item.id %></td>
+			<td><%=item.description%></td>
+			<td><%=item.start_date%></td>
+			<td><%=item.end_date%></td>
+		</tr>
+		
+	<%end%>
+<%else%>
+not yet
+<%end%></table>
+
+<%#= link_to 'Back', iterations_path %>
+<%= link_to 'Back to projects', projects_path %>

@@ -1,0 +1,21 @@
+<%= form_for @iteration, :url => {:action => :create, :id => @project.id } do |f| %>
+  <div class="field">
+    <%= f.label "Name of Iteration:" %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label "Iteration description" %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label "Start Date" %><br />
+    <%= f.text_field  :start_date %>
+  </div>
+    <div class="field">
+    <%= f.label "End Date" %><br />
+    <%= f.text_field :end_date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

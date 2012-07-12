@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @userst.name %>
+</p>
+
+<p>
+  <b>Disposition:</b>
+  <%= @userst.disposition %>
+</p>
+
+<p>
+  <b>Customer:</b>
+  <%= @userst.customer %>
+</p>
+
+<p>
+  <b>Tracker:</b>
+  <%= @userst.tracker %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @userst.status %>
+</p>
+
+<p>
+  <b>Priority:</b>
+  <%= @userst.priority %>
+</p>
+
+<p>
+  <b>Order:</b>
+  <%= @userst.order %>
+</p>
+
+<p>
+  <b>Estimated hours:</b>
+  <%= @userst.estimated_hours %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @userst.description %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_userst_path(@userst) %> |
+<%= link_to 'Back', usersts_path %>

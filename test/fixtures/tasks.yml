@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  ttype: MyString
+  disposition: MyString
+  acceptor: MyString
+  estimated_hours: 1.5
+  description: MyText
+  userst: 
+
+two:
+  name: MyString
+  ttype: MyString
+  disposition: MyString
+  acceptor: MyString
+  estimated_hours: 1.5
+  description: MyText
+  userst: 

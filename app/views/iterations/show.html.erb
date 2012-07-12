@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @iteration.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @iteration.description %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_iteration_path(@iteration) %> |
+<%= link_to 'Back', iterations_path %>
