@@ -1,31 +1,13 @@
 <table border=1>
-<tr><th>Project Title</th><th>Iterations</th><th>User Stories</th><th>Tasks</th></tr>
-
-<%i=0%>
-<% @array = Array.new %>
-<% @projects.each do |project|%>
-	<tr><td><%= link_to project.name, :controller => :iterations, :action=> :new, :id => project.id %> </td>
-	<td>
-	<%projectid = 0 %>
-		<% if project.id == @a[i] %>
-		    <% projectid = project.id %>
-			<% @iterations.each do |iteration| %>
-				<% if projectid == iteration.project_id %>
-					<% @array << iteration.id %>
-				<% end %>
-				<% i+=1 %>
-			<% end %>
-		<% end %>
-	</td>
+<tr>
+	<% @projects.each do |pid|%>
+		<%@iteration = Iteration.all %>
+		<td>	
+			<%= pid.name %>		<br>
+				<% @iteration = Iteration.all(:conditions => {:project_id => pid.id}) %>
+				<% @iteration.each do |b| %>
+					<%= b.name %><br>
+				<% end %> 
+		</td>
+	<%end%>
 </tr>
-<% end %>
-<%= @array.inspect %>
-<% j = 0 %>
-<% @iterations.each do | iter| %>
-<% if @array[j] == iter.id %>
-<%= iter.name %>
-<%j+=1%>
-<% end %>
-<% end %>
-</table>
-<%= link_to "new project", new_project_path%>

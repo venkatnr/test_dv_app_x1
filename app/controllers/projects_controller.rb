@@ -2,17 +2,7 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-  
      @projects = Project.all
-	 @iterations = Iteration.all
-	 @usersts = Userst.all
-	 @tasks = Task.all
-	 
-	 @a = []
-	 @iterations.each do |projectid|
-		@a << projectid.project_id
-	 end
-
 	 
 	#raise a.inspect
 	
